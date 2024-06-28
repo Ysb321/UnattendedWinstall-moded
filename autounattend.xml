@@ -214,25 +214,16 @@ Where-Object -FilterScript {
   ($_.Name -split '~')[0] -in @(
     'Browser.InternetExplorer';
     'MathRecognizer';
-    'Microsoft.Windows.Notepad';
     'OpenSSH.Client';
     'Microsoft.Windows.MSPaint';
     'Microsoft.Windows.PowerShell.ISE';
     'App.Support.QuickAssist';
     'App.StepsRecorder';
-    'Media.WindowsMediaPlayer';
     'Microsoft.Windows.WordPad';
   );
 } | Remove-WindowsCapability -Online *&gt;&amp;1 &gt;&gt; "$env:TEMP\remove-caps.log";
 		</File>
-
-<!--Removes Legacy Snipping Tool-->
-<File path="%TEMP%\remove-features.ps1">
-Get-WindowsOptionalFeature -Online |
-Where-Object -Property 'FeatureName' -In -Value @(
-  'Microsoft-SnippingTool';
-) | Disable-WindowsOptionalFeature -Online -Remove -NoRestart *&gt;&amp;1 &gt;&gt; "$env:TEMP\remove-features.log";
-</File>    
+		
 
 <!--Local Machine Registry Entries - This Sets Features for the Local Machine-->
 <File path="C:\Windows\Setup\Scripts\localmachine.cmd">
