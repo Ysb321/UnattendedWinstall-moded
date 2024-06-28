@@ -1,3 +1,9 @@
+# My Moddification
+It will not remove:-
+1. Notepad (Lagacy)
+2. Widows Media Player (Lagacy)
+3. Snipping tool (Lagacy).
+
 # Memory’s Tech Tips’ Unattended Windows Installation
 
 ## Overview
